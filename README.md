@@ -4,8 +4,6 @@
 - **ID (GitHub / submission username):** Mohamed-Ahmed984
 - **Track:** Backend .NET - Simulation Academy
 - **Branch:** `assignment/1-5`
-- **Pull request title:** `[S1-A5] OOP Assignment 1`
-- **LeetCode profile:** https://leetcode.com/u/7V5DqS2LTd/
 
 This assignment practices turning real requirements into C# objects: deciding who owns the data, protecting that data with validation, and building complex objects clearly.
 
@@ -18,7 +16,6 @@ This assignment practices turning real requirements into C# objects: deciding wh
 | 1 | [Critique.md](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/blob/assignment/1-5/Part1_ProceduralToOOP/Critique.md), [src](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/tree/assignment/1-5/Part1_ProceduralToOOP/src) | C++ design critique and a C# order system with customers, products, orders, stock, payment and sales totals. |
 | 2 | [src](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/tree/assignment/1-5/Part2_HotelReservationSystem/src) | Encapsulated guests, rooms and reservations, validated status transitions, maintenance checks and overlap prevention. |
 | 3 | [Answers.md](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/blob/assignment/1-5/Part3_BuilderPattern/Answers.md), [src](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/tree/assignment/1-5/Part3_BuilderPattern/src) | A fluent invoice builder and composed address/order builders with independent validation. |
-| 4 | [Solution.cs](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/blob/assignment/1-5/Part4_LeetCode/1679_MaxNumberOfKSumPairs/Solution.cs), [Accepted screenshot](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/blob/assignment/1-5/Part4_LeetCode/1679_MaxNumberOfKSumPairs/accepted_screenshot.png) | LeetCode 1679 using sorting and two pointers, with the actual supplied Accepted submission image. |
 
 Each console project is separate and targets **.NET 9**. There are no external NuGet dependencies.
 
@@ -52,12 +49,6 @@ The flat invoice contains about 20 properties. The first fluent builder replaces
 
 The composed version creates billing and shipping using the same `AddressBuilder`, creates payment/amount information using `OrderBuilder`, and passes the results into the final invoice builder. Each smaller object validates its own data. Both examples produce a total of **1040** from a subtotal of 1000, discount of 100 and tax of 140.
 
-### Part 4 - Sorting and Two Pointers
-
-The LeetCode solution sorts the array and starts a pointer at each end. If their sum equals `k`, it counts a pair and moves both pointers. A smaller sum moves the left pointer; a larger sum moves the right pointer. Each matched number is used once.
-
-Sorting takes `O(n log n)` time, and the pointer scan takes `O(n)`. The supplied Accepted screenshot is included as an actual PNG file.
-
 ## Run
 
 Install a .NET 9 SDK, then download the assignment branch:
@@ -76,8 +67,6 @@ dotnet run --project Part3_BuilderPattern/src/Part3_BuilderPattern.csproj
 ```
 
 Alternatively, open an individual `.csproj` in Visual Studio.
-
-Part 4 is a separate LeetCode solution, so it is submitted to LeetCode rather than run as a console project.
 
 ## Part 1 - Console Menu
 
@@ -118,7 +107,4 @@ Verified on 9 October 2026 with .NET SDK **9.0.100**:
 - All three console projects built in Release with **0 errors and 0 warnings**, and all three ran successfully.
 - The original C++ program was compiled and its menu exercised. The C# demo produces the same order totals: **315.00**, **1600.00** and **250.00**, with paid sales of **565.00** and matching product stock.
 - Every C# menu option, invalid IDs/numbers/dates, paid-order edits, insufficient stock and end-of-input handling were exercised.
-- A temporary verification program passed **197 behavior checks** covering independent order-system state, stock/payment rules, hotel encapsulation, identity/date validation, every legal reservation transition, rejected transitions, maintenance, cross-guest overlaps, adjacent stays, builder validation and LeetCode cases.
-- The LeetCode solution was compared with an independent exhaustive pairing search on 100 deterministic small inputs, and checked at the maximum array length. The supplied screenshot shows **Accepted, 51/51 tests passed** and is preserved byte-for-byte.
-
-![LeetCode Accepted submission](https://github.com/Mohamed-Ahmed984/Mohamed-Ahmed984-OOP-Assignment-1/blob/assignment/1-5/Part4_LeetCode/1679_MaxNumberOfKSumPairs/accepted_screenshot.png?raw=true)
+- A temporary verification program passed **197 behavior checks** covering independent order-system state, stock/payment rules, hotel encapsulation, identity/date validation, every legal reservation transition, rejected transitions, maintenance, cross-guest overlaps, adjacent stays and builder validation.
